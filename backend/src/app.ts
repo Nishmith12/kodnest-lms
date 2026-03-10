@@ -28,6 +28,11 @@ app.use('/api/videos', videoRoutes);
 app.use('/api/progress', progressRoutes);
 app.use('/api/health', healthRoutes);
 
+// Root route
+app.get('/', (_req, res) => {
+    res.json({ message: 'Kodnest LMS API is running', status: 'ok' });
+});
+
 // Global Error Handler
 app.use(errorHandler);
 
